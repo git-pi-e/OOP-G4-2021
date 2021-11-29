@@ -10,6 +10,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import BrickBreaker.BrickBreakerGameFrame;
+import FlappyBird.FlappyBird;
+import FlappyBird.FlappyBirdRenderer;
 import Snake.SnakeGameFrame;
 
 public class Main {
@@ -51,10 +53,12 @@ public class Main {
         flappyBirdGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // FlappyBirdRenderer flappyBird = new FlappyBirdRenderer();
-                // gameChooserFrame.setVisible(false);
-                // obJFrame.add(flappyBird);
-                // flappyBird.requestFocus();
+                FlappyBird flappyBird = new FlappyBird();
+                gameChooserFrame.setVisible(false);
+                obJFrame.add(flappyBird);
+                obJFrame.setSize(800, 800);
+		        obJFrame.setResizable(false);
+                flappyBird.requestFocus();
             }
         });
 
