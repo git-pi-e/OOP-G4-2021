@@ -1,3 +1,4 @@
+package BrickBreaker;
 public class Slider {
     private int x;
     private int velocityX;

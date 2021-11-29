@@ -9,6 +9,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
+import BrickBreaker.BrickBreakerGameFrame;
+import Snake.SnakeGameFrame;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         JFrame obJFrame = new JFrame();
@@ -45,6 +48,15 @@ public class Main {
         flappyBirdGameButton.setFont(new Font(flappyBirdGameButton.getFont().getName(), Font.PLAIN, 14));
         flappyBirdGameButton.setBackground(Color.GREEN);
         flappyBirdGameButton.setForeground(Color.white);
+        flappyBirdGameButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // FlappyBirdRenderer flappyBird = new FlappyBirdRenderer();
+                // gameChooserFrame.setVisible(false);
+                // obJFrame.add(flappyBird);
+                // flappyBird.requestFocus();
+            }
+        });
 
         JButton brickBreakerGameButton = new JButton("Brick Breaker");
         brickBreakerGameButton.setFont(new Font(brickBreakerGameButton.getFont().getName(), Font.PLAIN, 14));
