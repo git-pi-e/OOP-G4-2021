@@ -11,7 +11,6 @@ import javax.swing.SwingConstants;
 
 import BrickBreaker.BrickBreakerGameFrame;
 import FlappyBird.FlappyBird;
-import FlappyBird.FlappyBirdRenderer;
 import Snake.SnakeGameFrame;
 
 public class Main {
