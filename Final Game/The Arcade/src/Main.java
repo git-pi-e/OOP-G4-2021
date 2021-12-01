@@ -11,6 +11,7 @@ import javax.swing.SwingConstants;
 
 import BrickBreaker.BrickBreakerGameFrame;
 import FlappyBird.FlappyBird;
+import Pong.PongGameFrame;
 import Snake.SnakeGameFrame;
 
 public class Main {
@@ -39,6 +40,7 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 SnakeGameFrame snakeGameFrame = new SnakeGameFrame();
                 gameChooserFrame.setVisible(false);
+                obJFrame.setSize(720, 720);
                 obJFrame.add(snakeGameFrame);
                 snakeGameFrame.requestFocus();
             }
@@ -79,6 +81,18 @@ public class Main {
         pongGameButton.setFont(new Font(pongGameButton.getFont().getName(), Font.PLAIN, 14));
         pongGameButton.setBackground(Color.ORANGE);
         pongGameButton.setForeground(Color.white);
+        pongGameButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                PongGameFrame pongGameFrame = new PongGameFrame();
+                gameChooserFrame.setVisible(false);
+                obJFrame.setSize(1000, 555);
+                obJFrame.add(pongGameFrame);
+                pongGameFrame.requestFocus();
+            }
+
+        });
 
         JPanel labelPanel = new JPanel();
         labelPanel.setLayout(new GridLayout(2, 1));

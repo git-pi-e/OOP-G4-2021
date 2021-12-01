@@ -6,7 +6,7 @@ import java.awt.event.KeyListener;
 
 public class SnakeGameFrame extends JPanel implements KeyListener {
 
-    static final int SCREEN_WIDTH = 700, SCREEN_HEIGHT = 600;
+    static final int SCREEN_WIDTH = 720, SCREEN_HEIGHT = 720;
     static Snake snake;
     static boolean gameOver;
     static Apple apple;
