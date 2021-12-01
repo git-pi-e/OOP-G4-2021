@@ -3,19 +3,19 @@ package Pong;
 import javax.swing.*;
 import java.awt.*;
 
-public class PongGameFrame extends JPanel{
+public class PongGameFrame extends JFrame {
 
     GamePanel panel;
 
     public PongGameFrame(){
         panel = new GamePanel();
         this.add(panel);
-        // this.setTitle("Pong Game");
-        // this.setResizable(false);
+         this.setTitle("Pong Game");
+         this.setResizable(false);
         this.setBackground(Color.black);
-        // this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        // this.pack();
+         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+         this.pack();
         this.setVisible(true);
-        // this.setLocationRelativeTo(null);
+         this.setLocationRelativeTo(null);
     }
 }
