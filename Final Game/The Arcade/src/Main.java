@@ -12,6 +12,7 @@ import javax.swing.SwingConstants;
 import BrickBreaker.BrickBreakerGameFrame;
 import FlappyBird.FlappyBird;
 import Snake.SnakeGameFrame;
+import Pong.GameFrame;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -79,6 +80,15 @@ public class Main {
         pongGameButton.setFont(new Font(pongGameButton.getFont().getName(), Font.PLAIN, 14));
         pongGameButton.setBackground(Color.ORANGE);
         pongGameButton.setForeground(Color.white);
+        pongGameButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GameFrame pongGameFrame = new GameFrame();
+                gameChooserFrame.setVisible(false);
+                obJFrame.add(pongGameFrame);
+                pongGameFrame.requestFocus();
+            }
+        });
 
         JPanel labelPanel = new JPanel();
         labelPanel.setLayout(new GridLayout(2, 1));
