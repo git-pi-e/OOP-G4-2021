@@ -1,5 +1,8 @@
 package Pong;
 
+import Main.Main;
+
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
@@ -52,6 +55,13 @@ public class Paddle extends Rectangle{
                     setYDirection(0);
                 }
                 break;
+        }
+
+        if(e.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+
+            Main.pongGameFrame.setVisible(false);
+            Main.obJFrame.dispose();
+            Main.showScreen();
         }
     }
     public void setYDirection(int yDirection) {
