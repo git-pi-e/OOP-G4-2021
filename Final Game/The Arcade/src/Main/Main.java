@@ -1,3 +1,5 @@
+package Main;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -15,9 +17,25 @@ import Pong.PongGameFrame;
 import Snake.SnakeGameFrame;
 
 public class Main {
+
+    public static SnakeGameFrame snakeGameFrame;
+    public static FlappyBird flappyBird;
+    public static PongGameFrame pongGameFrame;
+    public static BrickBreakerGameFrame brickBreakerGameFrame;
+
+    public static JFrame obJFrame;
+    public static JPanel gameChooserFrame;
+
     public static void main(String[] args) throws Exception {
-        JFrame obJFrame = new JFrame();
-        JPanel gameChooserFrame = new JPanel();
+
+        showScreen();
+    }
+
+    public static void showScreen(){
+
+        obJFrame = new JFrame();
+        gameChooserFrame = new JPanel();
+//        obJFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         gameChooserFrame.setBackground(Color.black);
         gameChooserFrame.setLayout(new GridLayout(3, 1));
 
@@ -38,27 +56,28 @@ public class Main {
         snakeGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                SnakeGameFrame snakeGameFrame = new SnakeGameFrame();
+                snakeGameFrame = new SnakeGameFrame();
                 gameChooserFrame.setVisible(false);
                 obJFrame.setSize(720, 720);
                 obJFrame.add(snakeGameFrame);
+                obJFrame.setResizable(false);
                 snakeGameFrame.requestFocus();
             }
-            
+
         });
 
         JButton flappyBirdGameButton = new JButton("Flappy Bird");
         flappyBirdGameButton.setFont(new Font(flappyBirdGameButton.getFont().getName(), Font.PLAIN, 14));
         flappyBirdGameButton.setBackground(Color.GREEN);
-        flappyBirdGameButton.setForeground(Color.white);
+        flappyBirdGameButton.setForeground(Color.black);
         flappyBirdGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                FlappyBird flappyBird = new FlappyBird();
+                flappyBird = new FlappyBird();
                 gameChooserFrame.setVisible(false);
-                obJFrame.add(flappyBird);
                 obJFrame.setSize(800, 800);
-		        obJFrame.setResizable(false);
+                obJFrame.add(flappyBird);
+                obJFrame.setResizable(false);
                 flappyBird.requestFocus();
             }
         });
@@ -70,22 +89,22 @@ public class Main {
         brickBreakerGameButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                BrickBreakerGameFrame brickBreakerGameFrame = new BrickBreakerGameFrame();
+                brickBreakerGameFrame = new BrickBreakerGameFrame();
                 gameChooserFrame.setVisible(false);
                 obJFrame.add(brickBreakerGameFrame);
                 brickBreakerGameFrame.requestFocus();
             }
         });
-        
+
         JButton pongGameButton = new JButton("Pong");
         pongGameButton.setFont(new Font(pongGameButton.getFont().getName(), Font.PLAIN, 14));
         pongGameButton.setBackground(Color.ORANGE);
-        pongGameButton.setForeground(Color.white);
+        pongGameButton.setForeground(Color.black);
         pongGameButton.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-                PongGameFrame pongGameFrame = new PongGameFrame();
+                pongGameFrame = new PongGameFrame();
                 gameChooserFrame.setVisible(false);
                 obJFrame.setSize(1000, 555);
                 obJFrame.add(pongGameFrame);

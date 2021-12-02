@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import javax.swing.*;
+import Main.Main;
+
 
 public class FlappyBird extends JPanel implements ActionListener, MouseListener, KeyListener
 {
@@ -237,8 +239,16 @@ public class FlappyBird extends JPanel implements ActionListener, MouseListener,
 		{
 			jump();
 		}
+
+		if(e.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+
+			Main.flappyBird.setVisible(false);
+            Main.obJFrame.dispose();
+            Main.showScreen();
+
+		}
 	}
-	
+
 	@Override
 	public void mousePressed(MouseEvent e)
 	{

@@ -12,8 +12,8 @@ public class Apple {
     }
 
     public void change() {
-        x = Snake.SNAKE_WIDTH * (int)(Math.random() * SnakeGameFrame.SCREEN_WIDTH / Snake.SNAKE_WIDTH);
-        y = Snake.SNAKE_WIDTH * (int)(Math.random() * SnakeGameFrame.SCREEN_HEIGHT / Snake.SNAKE_WIDTH);
+        x =  (Snake.SNAKE_WIDTH) * (int)(Math.random() * SnakeGameFrame.SCREEN_WIDTH / Snake.SNAKE_WIDTH);
+        y =  (Snake.SNAKE_WIDTH) * (int)(Math.random() * SnakeGameFrame.SCREEN_HEIGHT / Snake.SNAKE_WIDTH);
     }
 
     public int getScore() {

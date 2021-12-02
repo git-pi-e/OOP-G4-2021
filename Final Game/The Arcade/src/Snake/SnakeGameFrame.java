@@ -1,8 +1,11 @@
 package Snake;
+import Main.Main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
 
 public class SnakeGameFrame extends JPanel implements KeyListener {
 
@@ -10,7 +13,7 @@ public class SnakeGameFrame extends JPanel implements KeyListener {
     static Snake snake;
     static boolean gameOver;
     static Apple apple;
-    static int FPS = 25;
+    static int FPS = 15;
     static long lastTime = 0;
 
     static final int font_size = 30;
@@ -18,6 +21,7 @@ public class SnakeGameFrame extends JPanel implements KeyListener {
     public SnakeGameFrame() {
         snake = new Snake();
         apple = new Apple(snake);
+        gameOver = false;
         setBackground(Color.BLACK);
         setFocusable(true);
         addKeyListener(this);
@@ -70,10 +74,19 @@ public class SnakeGameFrame extends JPanel implements KeyListener {
     }
 
     public void keyPressed(KeyEvent e) {
+
+        if(e.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+            Main.snakeGameFrame.setVisible(false);
+            Main.obJFrame.dispose();
+            Main.showScreen();
+        }
+
         int key = e.getKeyCode();
         if(key == KeyEvent.VK_ESCAPE) {
             System.exit(0);
         }
+
+
         if(!snake.isMoving()){
             if(key == KeyEvent.VK_UP || key == KeyEvent.VK_RIGHT  || key == KeyEvent.VK_DOWN) {
                 System.out.println("Moving started");

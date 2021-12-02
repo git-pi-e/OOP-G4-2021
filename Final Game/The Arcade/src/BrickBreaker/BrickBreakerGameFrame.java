@@ -1,4 +1,6 @@
 package BrickBreaker;
+import Main.Main;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -135,24 +137,34 @@ public class BrickBreakerGameFrame extends JPanel implements KeyListener, Action
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-            play = true;
-            slider.updateVelocity(7);
-        }
-        if(e.getKeyCode() == KeyEvent.VK_LEFT){
-            play = true;
-            slider.updateVelocity(-7);
-        }
-        if(e.getKeyCode()== KeyEvent.VK_ESCAPE){
-            play = !play;
+        if(!gameOver) {
+            if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+                play = true;
+                slider.updateVelocity(7);
+            }
+            if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+                play = true;
+                slider.updateVelocity(-7);
+            }
+            if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                play = !play;
+            }
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_RIGHT  || e.getKeyCode() == KeyEvent.VK_LEFT){
-            slider.updateVelocity(0);
+        if(!gameOver) {
+            if (e.getKeyCode() == KeyEvent.VK_RIGHT || e.getKeyCode() == KeyEvent.VK_LEFT) {
+                slider.updateVelocity(0);
+            }
         }
+        if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+                Main.brickBreakerGameFrame.setVisible(false);
+                Main.obJFrame.dispose();
+                Main.showScreen();
+        }
+
     }
     
 }
